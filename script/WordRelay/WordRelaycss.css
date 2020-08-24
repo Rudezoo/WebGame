@@ -1,0 +1,5 @@
+.WORD{
+    text-align: center;
+    width: 185px;
+    border: 1px solid gray;
+}
