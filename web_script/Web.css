@@ -1,3 +1,15 @@
 .site-page-header {
     border: 1px solid rgb(235, 237, 240);
   }
+
+.site-layout-content{
+  margin:20px;
+  background-color: white;
+}
+
+.logo{
+  background-color: gray;
+  margin: 16px;
+
+  height: 32px;
+}
