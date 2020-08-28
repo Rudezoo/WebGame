@@ -1,7 +1,7 @@
 import React, { useState, memo } from 'react';
 import { Form, Button, PageHeader, Input, Row, Col, Menu } from 'antd'
 
-import { Layout } from 'antd';
+import { Layout, Typography } from 'antd';
 import SideMenu from './SideMenu';
 
 import { SmileTwoTone, AimOutlined } from '@ant-design/icons';
@@ -11,34 +11,50 @@ const Web = memo(() => {
 
     const { Header, Footer, Sider, Content } = Layout;
     const { SubMenu } = Menu;
+    const { Title, Text } = Typography;
+
     return (
         <>
 
-            {/* <PageHeader
-        className="site-page-header"
-        title="Title"
-        subTitle="This is a subtitle"></PageHeader>
-        <Form>
-            <Row>
-                <Col span={12}>
-                    <Input value="check"></Input>
-                </Col>
-                <Col span={12}>
-                    <Button type="primary" htmlType="submit">check</Button>
-                </Col>
-            </Row>
-            
-            
-            
-        </Form> */}
+
             <Layout>
-                <Header>
-                        <AimOutlined style={{
-                            fontSize: 30,
-                            color: "white"
-                        }} />
-                        
-                </Header>
+                <Row>
+                    <Col span={19}>
+                        <Header>
+                            <h2 style={{
+                                color: "white"
+                            }}
+                                class="WebHeader"
+                            >NoCheat
+                                        <Text disabled style={
+                                    {
+                                        fontSize: 15,
+                                        color: "gray"
+                                    }
+                                }>&nbsp;@Rude_zoo</Text>
+                            </h2>
+                        </Header>
+                    </Col>
+
+                    <Col span={5}>
+                        <Header>
+                            <Row>
+                                <Col span={12}>
+                                <Button>Login</Button>
+                                </Col>
+                                <Col span={12}>
+                                <Button>Logout</Button>
+                                </Col>
+                
+                            </Row>
+                           
+                        </Header>
+                    </Col>
+
+
+                </Row>
+
+
                 <Layout>
                     <Sider>
                         <SideMenu></SideMenu>

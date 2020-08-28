@@ -8,10 +8,10 @@ const SideMenu = memo(() => {
     return (
         <>
             {/* <div className="logo"/> */}
-            <Menu theme="dark" mode="inline" >
+            <Menu mode="inline" theme="dark" >
                 {
                     MenuName.map((v)=>{
-                    return <Menu.Item>{v}</Menu.Item>;
+                    return <Menu.Item className="MenuItem">{v}</Menu.Item>;
                     })
                 }
                 
