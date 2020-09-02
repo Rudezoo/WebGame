@@ -53,10 +53,22 @@
   min-height: 360px;;
 }
 
-
-.WebHeader{
+.Logo{
+  color : white;
+  font-size: 30px;
   font-weight: 700;
- 
 }
 
+.subLogo{
+  color: gainsboro;
+}
 
+.LoginClick{
+  color:white;
+  float: right;
+  border: 0px;
+}
+
+.LoginScreen{
+  
+}

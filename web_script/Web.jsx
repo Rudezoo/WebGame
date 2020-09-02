@@ -1,7 +1,7 @@
 import React, { useState, memo } from 'react';
 import { Form, Button, PageHeader, Input, Row, Col, Menu } from 'antd'
 
-import { HomeOutlined, VideoCameraAddOutlined, FileAddOutlined,SafetyOutlined } from '@ant-design/icons';
+import { HomeOutlined, VideoCameraAddOutlined, FileAddOutlined, SafetyOutlined } from '@ant-design/icons';
 import { Layout, Typography } from 'antd';
 
 import {
@@ -13,12 +13,13 @@ import {
 import Home from './Components/Home';
 import AddTest from './Components/AddTest';
 import SeeVideo from './Components/SeeVideo';
+import Login from './Components/Login';
 
 const SideMenu = memo((props) => {
 
     const MenuName = ["Home", "Add Test", "See Exam video"];
     const icons = [<HomeOutlined />, <FileAddOutlined />, <VideoCameraAddOutlined />];
-    const Links = ["/web_script/Web.html", "/Add-Test", "See-Video"];
+    const Links = ["/web_script/Web.html", "/Add-Test", "/See-Video"];
 
 
     return (
@@ -63,29 +64,25 @@ const Web = memo(() => {
 
     return (
         <>
+            <BrowserRouter>
 
+                <Layout style={{ minHeight: '100vh' }}>
 
-            <Layout style={{ minHeight: '100vh' }}>
+                    <Header>
+                        <Text className="Logo">
+                            <SafetyOutlined />NoCheat
+                    </Text>
+                        <Text className="subLogo">
+                            &nbsp; @Rude_zoo @hyowii
+                    </Text>
+                        <Link to="/Login" className="LoginClick">Login</Link>
 
-                <Header>
-                    <h2 style={{
-                        color: "white"
-                    }}
-                        className="WebHeader"
-                    >  <SafetyOutlined />NoCheat
-                                        <Text disabled style={
-                            {
-                                fontSize: 15,
-                                color: "gray"
-                            }
-                        }>&nbsp;@Rude_zoo</Text>
-                    </h2>
-                </Header>
+                    </Header>
 
 
 
-                <Layout>
-                    <BrowserRouter>
+                    <Layout>
+
                         <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
                             <SideMenu></SideMenu>
                         </Sider>
@@ -99,6 +96,7 @@ const Web = memo(() => {
                                         <Route exact path="/web_script/Web.html" component={Home} />
                                         <Route path="/Add-Test" component={AddTest} />
                                         <Route path="/See-Video" component={SeeVideo} />
+                                        <Route path="/Login" component={Login} />
                                     </Switch>
 
 
@@ -111,12 +109,12 @@ const Web = memo(() => {
                                 }
                             }>Web Design ©2020 Created by Rude zoo</Footer>
                         </Layout>
-                    </BrowserRouter>
+
+                    </Layout>
+
                 </Layout>
 
-            </Layout>
-
-
+            </BrowserRouter>
         </>
     );
 
