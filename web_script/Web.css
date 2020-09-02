@@ -50,16 +50,13 @@
 .site-layout-content{
   margin:20px;
   background-color: white;
+  min-height: 360px;;
 }
 
-.logo{
-  background-color: gray;
-  margin: 16px;
-
-  height: 32px;
-}
 
 .WebHeader{
   font-weight: 700;
+ 
 }
+
 
