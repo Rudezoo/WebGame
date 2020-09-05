@@ -40,9 +40,9 @@
 
 
 
-*{
+/* *{
   font-family: 'Spoqa Han Sans', sans-serif;
-}
+} */
 .site-page-header {
     border: 1px solid rgb(235, 237, 240);
   }
@@ -61,14 +61,4 @@
 
 .subLogo{
   color: gainsboro;
-}
-
-.LoginClick{
-  color:white;
-  float: right;
-  border: 0px;
-}
-
-.LoginScreen{
-  
 }

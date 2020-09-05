@@ -14,10 +14,11 @@ import Home from './Components/Home';
 import AddTest from './Components/AddTest';
 import SeeVideo from './Components/SeeVideo';
 import Login from './Components/Login';
+import SignUp from './Components/SignUp';
 
 const SideMenu = memo((props) => {
 
-    const MenuName = ["Home", "Add Test", "See Exam video"];
+    const MenuName = ["홈", "시험 추가", "비디오 확인"];
     const icons = [<HomeOutlined />, <FileAddOutlined />, <VideoCameraAddOutlined />];
     const Links = ["/web_script/Web.html", "/Add-Test", "/See-Video"];
 
@@ -66,11 +67,13 @@ const Web = memo(() => {
         <>
             <BrowserRouter>
 
-                <Layout style={{ minHeight: '100vh' }}>
+                <Layout style={{ minHeight: '100vh'}}>
 
                     <Header>
                         <Text className="Logo">
-                            <SafetyOutlined />NoCheat
+                            <Link to="/web_script/Web.html" style={{
+                                color:"white"
+                            }}><SafetyOutlined />NoCheat</Link>
                     </Text>
                         <Text className="subLogo">
                             &nbsp; @Rude_zoo @hyowii
@@ -97,6 +100,7 @@ const Web = memo(() => {
                                         <Route path="/Add-Test" component={AddTest} />
                                         <Route path="/See-Video" component={SeeVideo} />
                                         <Route path="/Login" component={Login} />
+                                        <Route path="/Sign-Up" component={SignUp} />
                                     </Switch>
 
 

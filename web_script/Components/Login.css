@@ -1,0 +1,15 @@
+
+.LoginClick{
+    color:white;
+    float: right;
+    border: 0px;
+  }
+  
+  .LoginScreen{
+    display: inline-block;
+    text-align: center;
+    width: 40%;
+  }
+  .LoginBtn{
+    width: 100%;
+  }
