@@ -16,14 +16,14 @@ const SignUp = memo(() => {
     const [CheckedList, setCheckedList] = useState([]);
 
     const [Id, setId] = useState('');
-    const [StuduentId, setStuduentId] = useState('');
+    const [Name, setName] = useState('');
     const [Email, setEmail] = useState('');
 
     const [IdIn, setIdIn] = useState('');
     const [passIn, setpassIn] = useState('');
-    const [SidIn, setSidIn] = useState('');
+    const [NameIn, setNameIn] = useState('');
     const [EmailIn, setEmailIn] = useState('');
-    const [CheckIn, setCheckIn] = useState();
+    //const [CheckIn, setCheckIn] = useState();
 
     const layout = {
         labelCol: { span: 10 },
@@ -52,18 +52,18 @@ const SignUp = memo(() => {
         setPasswrdCheck(e.target.value);
     }
 
-    const onChangeCheckedList = (checkedlist) => {
+   /*  const onChangeCheckedList = (checkedlist) => {
         if (checkedlist.length < 2) {
             setCheckedList(checkedlist);
         }
 
-    }
+    } */
 
     const OnchangeId = (e) => {
         setId(e.target.value);
     }
-    const OnchangeStudentId = (e) => {
-        setStuduentId(e.target.value);
+    const OnchangeName = (e) => {
+        setName(e.target.value);
     }
     const OnchangeEmail = (e) => {
         setEmail(e.target.value);
@@ -83,15 +83,15 @@ const SignUp = memo(() => {
         }else{
             setpassIn('');
         }
-        if (CheckedList.length === 0) {
+     /*    if (CheckedList.length === 0) {
             setCheckIn('계정 종류를 선택하세요!');
         }else{
             setCheckIn('');
-        }
-        if (StuduentId === '') {
-            setSidIn('학번를 입력하세요!');
+        } */
+        if (Name === '') {
+            setNameIn('이름 입력하세요!');
         }else{
-            setSidIn('');
+            setNameIn('');
         }
         if (Email === '') {
             setEmailIn('이메일을 입력하세요!');
@@ -162,7 +162,7 @@ const SignUp = memo(() => {
                             <Input.Password placeholder="위에 작성한 패스워드를 입력하세요" onChange={onChangePasswdCheck} value={PasswrdCheck} />
                             {Correct}
                         </Form.Item>
-                        <Form.Item {...layout} label="계정 종류" style={{
+                        {/* <Form.Item {...layout} label="계정 종류" style={{
                             marginBottom: 0,
                         }}>
                             <Form.Item valuePropName="checked">
@@ -175,14 +175,14 @@ const SignUp = memo(() => {
                             </Form.Item>
 
 
-                        </Form.Item>
+                        </Form.Item> */}
 
-                        <Form.Item {...layout} label="학번">
-                            <Input placeholder="학번을 입력하세요" value={StuduentId} onChange={OnchangeStudentId}></Input>
+                        <Form.Item {...layout} label="이름">
+                            <Input placeholder="이름을 입력하세요" value={Name} onChange={OnchangeName}></Input>
                             <div style={{
                                 color: "red",
                             }}>
-                                {SidIn}
+                                {NameIn}
                             </div>
 
                         </Form.Item>

@@ -1,7 +1,7 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo,useEffect } from 'react';
 import { Form, Button, PageHeader, Input, Row, Col, Menu } from 'antd'
 
-import { HomeOutlined, VideoCameraAddOutlined, FileAddOutlined, SafetyOutlined } from '@ant-design/icons';
+import { HomeOutlined, VideoCameraAddOutlined, FileAddOutlined, SafetyOutlined,VideoCameraOutlined } from '@ant-design/icons';
 import { Layout, Typography } from 'antd';
 
 import {
@@ -9,25 +9,36 @@ import {
     Route,
     Link,
     Switch,
+    useLocation,
 } from 'react-router-dom';
 import Home from './Components/Home';
 import AddTest from './Components/AddTest';
-import SeeVideo from './Components/SeeVideo';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
+import EnterExam_Student from './Components/EnterExam_Student';
 
 const SideMenu = memo((props) => {
 
-    const MenuName = ["홈", "시험 추가", "비디오 확인"];
-    const icons = [<HomeOutlined />, <FileAddOutlined />, <VideoCameraAddOutlined />];
-    const Links = ["/web_script/Web.html", "/Add-Test", "/See-Video"];
+    const location=useLocation();
+    const MenuName = ["홈", "시험 등록-관리", "시험장 입장-학생","시험장 입장-관리","제출 화면","시험 완료-답안지 확인","시험 링크" ];
+    const icons = [<HomeOutlined />, <FileAddOutlined />, <VideoCameraOutlined />,<VideoCameraAddOutlined />];
+    const Links = ["/web_script/Web.html", "/Add-Test", "/EnterExam-Student","/1","/2","/3","/4"];
+    const [selectedKey, setselectedKey] = useState("0");
 
+    useEffect(()=>{
+        console.log(location);
+        let index=Links.findIndex((v)=>{
+            return (v===location.pathname);
+        });
+        console.log(index);
+        setselectedKey(String(index));
+    },[location]);
 
     return (
         <>
             {/* <div className="logo"/> */}
 
-            <Menu mode="inline" theme="dark" defaultSelectedKeys={['0']} >
+            <Menu mode="inline" theme="dark" selectedKeys={[selectedKey]} >
 
                 {
                     MenuName.map((v, i) => {
@@ -73,7 +84,7 @@ const Web = memo(() => {
                         <Text className="Logo">
                             <Link to="/web_script/Web.html" style={{
                                 color:"white"
-                            }}><SafetyOutlined />NoCheat</Link>
+                            }}><SafetyOutlined />ThrowOrNot</Link>
                     </Text>
                         <Text className="subLogo">
                             &nbsp; @Rude_zoo @hyowii
@@ -98,7 +109,7 @@ const Web = memo(() => {
                                     <Switch>
                                         <Route exact path="/web_script/Web.html" component={Home} />
                                         <Route path="/Add-Test" component={AddTest} />
-                                        <Route path="/See-Video" component={SeeVideo} />
+                                        <Route path="/EnterExam-Student" component={EnterExam_Student} />
                                         <Route path="/Login" component={Login} />
                                         <Route path="/Sign-Up" component={SignUp} />
                                     </Switch>

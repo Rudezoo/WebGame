@@ -13,7 +13,7 @@ const Home = () => {
                 <Text style={{
                     fontWeight: "bold",
                     fontSize: 20,
-                }}>NoCheat에 오신걸 환영합니다!</Text>
+                }}>ThrowOrNot에 오신걸 환영합니다!</Text>
                 <Text keyboard>In out Site, No one can do cheat in Exam!</Text>
             </Space>
             <Divider></Divider>
