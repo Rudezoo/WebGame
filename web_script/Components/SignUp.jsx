@@ -1,7 +1,7 @@
 import React, { useState, memo, useEffect } from 'react';
 import { Form, Input, Button, Checkbox, Typography, Divider, Space} from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
-import './SignUp.css';
+import '../design/SignUp.css';
 import {
     BrowserRouter,
     Link,

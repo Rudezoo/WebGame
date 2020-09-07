@@ -6,7 +6,7 @@ import {
     Link,
 } from 'react-router-dom';
 
-import './Login.css';
+import '../design/Login.css';
 
 const Login = () => {
     const { Text } = Typography;
@@ -23,6 +23,7 @@ const Login = () => {
                 <div style={{
                     margin: 20,
                     textAlign:"center",
+                    height : 400,
                 }}> 
 
                     <div style={{
