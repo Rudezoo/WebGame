@@ -2,7 +2,7 @@
 
 var OpenVidu = require('openvidu-node-client').OpenVidu;
 var OpenViduRole = require('openvidu-node-client').OpenViduRole;
-
+var test=require("./web_script/public/Test");
 // Check launch arguments: must receive openvidu-server URL and the secret
 if (process.argv.length != 4) {
     console.log("Usage: node " + __filename + " OPENVIDU_URL OPENVIDU_SECRET");
@@ -26,7 +26,8 @@ app.use(session({
     resave: false,
     secret: 'MY_SECRET'
 }));
-app.use(express.static(__dirname + '/public')); // Set the static files location
+app.use('/Test',test); // Set the static files location
+console.log(__dirname);
 app.use(bodyParser.urlencoded({
     'extended': 'true'
 })); // Parse application/x-www-form-urlencoded

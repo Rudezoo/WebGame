@@ -320,7 +320,7 @@ const Test = () => {
     return (
         <>
 
-            <div id="main-container" className="container">
+           {  <div id="main-container" className="container">
 
                 <div id="not-logged" className="vertical-center">
                     <form className="form-group jumbotron" onSubmit={() => {
@@ -402,8 +402,8 @@ const Test = () => {
                     </div>
                 </div>
             </div>
-
-
+ }
+ 
 
         </>
 

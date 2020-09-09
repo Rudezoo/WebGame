@@ -16,14 +16,15 @@ import AddTest from './Components/AddTest';
 import Login from './Components/Login';
 import SignUp from './Components/SignUp';
 import EnterExam_Student from './Components/EnterExam_Student';
-import Test from './Components/Test';
+import Test from './public/Test';
+
 
 const SideMenu = memo((props) => {
 
     const location=useLocation();
     const MenuName = ["홈", "시험 등록-관리", "시험장 입장-학생","/*시험장 입장-관리*/ Test","제출 화면","시험 완료-답안지 확인","시험 링크" ];
     const icons = [<HomeOutlined />, <FileAddOutlined />, <VideoCameraOutlined />,<VideoCameraAddOutlined />];
-    const Links = ["/web_script/Web.html", "/Add-Test", "/EnterExam-Student","/Test","/2","/3","/4"];
+    const Links = ["/web_script/index.html", "/Add-Test", "/EnterExam-Student","/Test","/2","/3","/4"];
     const [selectedKey, setselectedKey] = useState("0");
 
     useEffect(()=>{
@@ -82,7 +83,7 @@ const Web = memo(() => {
 
                     <Header>
                         <Text className="Logo">
-                            <Link to="/web_script/Web.html" style={{
+                            <Link to="/web_script/index.html" style={{
                                 color:"white"
                             }}><SafetyOutlined />ThrowOrNot</Link>
                     </Text>
@@ -107,12 +108,12 @@ const Web = memo(() => {
 
                                 <div className="site-layout-content">
                                     <Switch>
-                                        <Route exact path="/web_script/Web.html" component={Home} />
+                                        <Route exact path="/web_script/index.html" component={Home} />
                                         <Route path="/Add-Test" component={AddTest} />
                                         <Route path="/EnterExam-Student" component={EnterExam_Student} />
                                         <Route path="/Login" component={Login} />
                                         <Route path="/Sign-Up" component={SignUp} />
-                                        <Route path="/Test" component={Test} />
+                                        <Route path="/Test" component={Test} /> 
                                     </Switch>
 
 
